@@ -25,14 +25,6 @@ class Note:
 
 #  класс NoteApp, который будет выполнять операции по сохранению, чтению, добавлению, редактированию и удалению заметок.
 
-class Note:
-    def __init__(self, note_id, title, message, datetime_created, datetime_modified):
-        self.note_id = note_id
-        self.title = title
-        self.message = message
-        self.datetime_created = datetime_created
-        self.datetime_modified = datetime_modified
-
 class NoteApp:
     def __init__(self):
         self.notes = []
