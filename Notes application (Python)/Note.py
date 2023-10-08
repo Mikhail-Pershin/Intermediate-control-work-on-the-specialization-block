@@ -41,10 +41,11 @@ class NoteApp:
                 reader = csv.reader(csvfile, delimiter=';')
                 for row in reader:
                     note_id, title, message, datetime_created, datetime_modified = row
-                    datetime_created = datetime.datetime.strptime(datetime_created, "%Y-%m-%d %H:%M:%S")
-                    datetime_modified = datetime.datetime.strptime(datetime_modified, "%Y-%m-%d %H:%M:%S")
+                    datetime_created = datetime.datetime.strptime(datetime_created, "%Y-%m-%d %H:%M:%S.%f")
+                    datetime_modified = datetime.datetime.strptime(datetime_modified, "%Y-%m-%d %H:%M:%S.%f")
                     note = Note(note_id, title, message, datetime_created, datetime_modified)
                     self.notes.append(note)
+                    
         except FileNotFoundError:
             pass
 
